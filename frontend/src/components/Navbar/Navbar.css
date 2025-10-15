@@ -47,6 +47,20 @@
     cursor: pointer;
 }
 
+.navbar-search-icon {
+    position: relative;
+}
+
+.navbar-search-icon .dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
+
 @media (max-width: 1050px) {
     .navbar .logo {
         width: 140px;
@@ -95,6 +109,6 @@
 
 @media (max-width: 750px) {
     .navbar-menu {
-       display: none;
+        display: none;
     }
 }
