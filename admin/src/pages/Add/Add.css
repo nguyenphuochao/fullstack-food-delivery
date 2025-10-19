@@ -10,6 +10,10 @@
     gap: 20px;
 }
 
+.add-img-upload {
+    max-width: 120px;
+}
+
 .add-img-upload img {
     width: 120px;
 }
@@ -42,4 +46,9 @@
     background-color: black;
     color: white;
     cursor: pointer;
+}
+
+.error-message {
+    color: rgb(228, 25, 25);
+    font-size: 14px;
 }
