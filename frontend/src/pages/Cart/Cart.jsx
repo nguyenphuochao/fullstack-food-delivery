@@ -5,7 +5,7 @@ import { StoreContext } from '../../context/StoreContext';
 
 const Cart = () => {
 
-    const { cartItems, food_list, removeFromCart, getTotalCartAmount, updateFromCart } = useContext(StoreContext);
+    const { foodList, cartItems, removeFromCart, updateFromCart, getTotalCartAmount, url } = useContext(StoreContext);
     const navigate = useNavigate()
 
     return (
@@ -22,15 +22,15 @@ const Cart = () => {
                 <br />
                 <hr />
                 {
-                    food_list.map((item, index) => {
+                    foodList.map((item, index) => {
                         if (cartItems[item._id] > 0) {
                             return (
-                                <div>
-                                    <div key={index} className='cart-items-title cart-items-item'>
-                                        <img src={item.image} alt={item.name} />
+                                <div key={index}>
+                                    <div className='cart-items-title cart-items-item'>
+                                        <img src={url + "/images/" + item.image} alt={item.name} />
                                         <p>{item.name}</p>
                                         <p>${item.price}</p>
-                                        <p><input onChange={(e) => updateFromCart(item._id, e.target.value)} style={{padding: '3px', width: '70px'}} type="number" min={1} defaultValue={cartItems[item._id]} /></p>
+                                        <p><input onChange={(e) => updateFromCart(item._id, e.target.value)} style={{ padding: '3px', width: '70px' }} type="number" min={1} defaultValue={cartItems[item._id]} /></p>
                                         <p>${Number(item.price) * Number(cartItems[item._id])}</p>
                                         <p style={{ cursor: 'pointer' }} onClick={() => removeFromCart(item._id)}>x</p>
                                     </div>
