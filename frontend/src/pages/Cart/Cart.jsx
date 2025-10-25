@@ -30,7 +30,7 @@ const Cart = () => {
                                         <img src={url + "/images/" + item.image} alt={item.name} />
                                         <p>{item.name}</p>
                                         <p>${item.price}</p>
-                                        <p><input onChange={(e) => updateFromCart(item._id, e.target.value)} style={{ padding: '3px', width: '70px' }} type="number" min={1} defaultValue={cartItems[item._id]} /></p>
+                                        <p><input onChange={(e) => updateFromCart(item._id, e.target.value)} style={{ padding: '3px', width: '70px' }} type="number" min={1} value={cartItems[item._id]} /></p>
                                         <p>${Number(item.price) * Number(cartItems[item._id])}</p>
                                         <p style={{ cursor: 'pointer' }} onClick={() => removeFromCart(item._id)}>x</p>
                                     </div>
