@@ -9,7 +9,7 @@ const PlaceOrder = () => {
     const { getTotalCartAmount, foodList, cartItems, url, token } = useContext(StoreContext)
 
     const [data, setData] = useState({
-        firstname: "",
+        firstName: "",
         lastName: "",
         email: "",
         street: "",
@@ -67,7 +67,7 @@ const PlaceOrder = () => {
             <div className='place-order-left'>
                 <p className='title'>Delivery Infomation</p>
                 <div className='multi-fields'>
-                    <input required onChange={onChangeHandler} name='firstname' value={data.firstname} type="text" placeholder='First name' />
+                    <input required onChange={onChangeHandler} name='firstName' value={data.firstName} type="text" placeholder='First name' />
                     <input required onChange={onChangeHandler} name='lastName' value={data.lastName} type="text" placeholder='Last name' />
                 </div>
                 <input required onChange={onChangeHandler} name='email' value={data.email} type="email" placeholder='Email address' />
